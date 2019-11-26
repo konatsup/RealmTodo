@@ -8,7 +8,6 @@ import io.realm.Realm
 import io.realm.RealmConfiguration
 import io.realm.RealmResults
 import kotlinx.android.synthetic.main.activity_main.*
-import java.text.SimpleDateFormat
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -72,6 +71,12 @@ class MainActivity : AppCompatActivity() {
     fun deleteAll() {
         realm.executeTransaction {
             realm.deleteAll()
+        }
+    }
+
+    fun delete(task: Task){
+        realm.executeTransaction {
+            task.deleteFromRealm()
         }
     }
 }
