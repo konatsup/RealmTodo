@@ -3,7 +3,6 @@ package com.konatsup.realmtodo
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.content.Context
-import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,7 +28,7 @@ class TaskAdapter(
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
         val task: Task = taskList?.get(position) ?: return
 
-        holder.layout.setOnClickListener{
+        holder.container.setOnClickListener{
             listener.onItemClick(task)
         }
         holder.imageView.setImageResource(task.imageId)
@@ -45,7 +44,7 @@ class TaskAdapter(
     }
 
     class TaskViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val layout : LinearLayout = view.layout
+        val container : LinearLayout = view.container
         val imageView: ImageView = view.imageView
         val contentTextView: TextView = view.contentTextView
         val dateTextView: TextView = view.dateTextView
