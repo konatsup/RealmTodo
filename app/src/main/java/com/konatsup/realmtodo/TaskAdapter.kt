@@ -34,7 +34,7 @@ class TaskAdapter(
         holder.imageView.setImageResource(task.imageId)
         holder.contentTextView.text = task.content
         holder.dateTextView.text =
-            SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.JAPANESE).format(task.date)
+            SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.JAPANESE).format(task.createdAt)
 
     }
 
